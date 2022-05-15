@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/" lang="pl">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap');
+
+        body {
+            background-color: #83CEE5;
+            font-family: 'Fredoka One', sans-serif;
+        }
+
+        .blue-background {
+            background-color: #00b5d8;
+            width: 100%;
+            height: 200px;
+        }
+
+        .mail-body {
+            border-radius: 20px;
+            background-color: #FFFFFF;
+            max-width: 600px;
+            line-height: 20px;
+            margin: -200px auto;
+            margin-bottom: 50px;
+        }
+
+        .mail-body .welcome {
+            font-weight: 500;
+            font-size: 50px;
+            text-align: center;
+            font-family: "Fredoka One", sans-serif;
+            margin-top: 110px;
+            padding-top: 50px;
+            margin-bottom: 60px;
+        }
+
+        p,
+        .link {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+            padding: 0 30px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background-color: #00b5d8;
+            color: white;
+            border-radius: 20px;
+            text-decoration: none;
+            display: block;
+            margin-left: 25%;
+            margin-right: 25%;
+            padding: 15px;
+            text-align: center;
+            font-family: "Open Sans Bold", sans-serif;
+            margin-bottom: 40px;
+
+        }
+
+        .link {
+            display: block;
+            color: #00b5d8;
+            font-weight: 500;
+        }
+
+        .signature {
+            padding-bottom: 5px;
+        }
+
+
+        .aligncenter {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main">
+    <div class="blue-background"></div>
+
+    <div class="mail-body">
+        <p class="welcome">Welcome to Sanguage!</p>
+        <p class="aligncenter">
+            <a href="https://imgbb.com/"><img src="https://i.ibb.co/qrs04J9/mascot.png" alt="mascot" width="100" height="100" style="align:center"></a>
+        </p>
+        <p>Click below to confirm your account:</p>
+        <a class="cta-button" href="#" th:href="@{__${link}__}">Confirm Account </a>
+        <p>If that doesn't work, copy and paste the following link in your browser:</p>
+        <a class="link" href="#" th:href="@{__${link}__}" th:text="${link}">
+        </a>
+        <p class="signature"></p>
+    </div>
+</div>
+</body>
+</html>
