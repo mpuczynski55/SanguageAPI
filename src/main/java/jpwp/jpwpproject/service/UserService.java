@@ -139,6 +139,11 @@ public class UserService implements UserDetailsService {
         }
     }
 
+    public int getUserKnownVocabSize(Long userID) {
+        User user = findById(userID).orElseThrow(() -> new UsernameNotFoundException("user not found"));
+        return user.getKnownTranslations().getKnownVocabulary().size();
+    }
+
     @Override
     public UserDetails loadUserByUsername(String username) throws org.springframework.security.core.userdetails.UsernameNotFoundException {
         return null;

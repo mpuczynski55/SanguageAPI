@@ -63,4 +63,10 @@ public class UserController {
     public ResponseEntity<SimpleResponse> getUserEnabled(@RequestParam Long userID) {
         return new ResponseEntity<>(userService.getUserEnabled(userID), HttpStatus.OK);
     }
+
+    @GetMapping(path = "getUserKnownVocabSize")
+    @ResponseBody
+    public ResponseEntity<Integer> getUserKnownVocabSize(@RequestParam Long userID) {
+        return new ResponseEntity<>(userService.getUserKnownVocabSize(userID), HttpStatus.OK);
+    }
 }

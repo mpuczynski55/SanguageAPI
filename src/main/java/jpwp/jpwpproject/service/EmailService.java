@@ -41,7 +41,7 @@ public class EmailService implements EmailSender {
     public String buildConfirmAccountEmail(String link) {
         Context context = new Context();
         context.setVariable("link", link);
-        final String htmlContent = templateEngine.process("confirmAccount.html", context);
+        final String htmlContent = templateEngine.process("confirmAccount", context);
         return htmlContent;
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping(path = "registration")
@@ -27,7 +28,10 @@ public class RegistrationController {
 
     @GetMapping(path = "confirm")
     @ResponseBody
-    public String confirm(@RequestParam("token") String token) {
-        return registrationService.confirmToken(token);
+    public ModelAndView confirm(@RequestParam("token") String token) {
+        registrationService.confirmToken(token);
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("accountConfirmed");
+        return modelAndView;
     }
 }
